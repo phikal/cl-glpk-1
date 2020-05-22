@@ -71,7 +71,7 @@
 	  (setf (mem-aref as :double k) a))
 
     (%load-matrix lp 9 is js as)
-    (%simplex lp)
+    (%simplex lp (null-pointer))
 
     (format t "z = ~a; x1 = ~a; x2 = ~a; x3 = ~a~%"
 	    (%get-obj-val lp)
@@ -101,7 +101,7 @@
 					  (3 3 6.0d0))
 			   :objective '(10 6 4)
 			   :direction :max)))
-    (simplex lp)
+    (simplex lp (null-pointer))
     (format t "z = ~a, x1 = ~a, x2 = ~a, x3 = ~a~%"
 	    (objective-value lp)
 	    (column-primal-value lp 1)
@@ -118,7 +118,7 @@
              :bounds ((>= x1 0)
                       (>= x2 0)
                       (>= x3 0)))))
-    (simplex lp)
+    (simplex lp (null-pointer-p))
     (format t "z = ~a, x1 = ~a, x2 = ~a, x3 = ~a~%"
 	    (objective-value lp)
 	    (column-primal-value lp 1)

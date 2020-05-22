@@ -149,7 +149,7 @@
 ;;; Solvers
 
 (defmethod simplex ((lp linear-problem))
-  (%simplex (_problem lp)))
+  (%simplex (_problem lp) (null-pointer)))
 
 
 ;;; Query functions
